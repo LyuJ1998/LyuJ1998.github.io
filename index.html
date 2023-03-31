@@ -59,6 +59,29 @@
 			<table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 				<tbody>
 
+          <tr onmouseout="clothesnet_stop()" onmouseover="clothesnet_start()">
+						<td width="30%">
+						<div class="one">
+						<div class="two" id="clothesnet"><img src="images/clothesnet.gif" style="width: 210px;" /></div>
+						<img src="images/clothesnet.jpg" style="width: 210px;" /></div>
+						<script type="text/javascript">
+        function clothesnet_start() {
+        document.getElementById('clothesnet').style.opacity = "1";
+        }
+        function clothesnet_stop() {
+        document.getElementById('clothesnet').style.opacity = "0";
+        }
+        clothesnet_stop()
+        </script></td>
+						<td valign="top" width="75%"><papertitle>	ClothesNet: An Information-Rich 3D Garment Model Repository with Simulated Clothes Environment</papertitle><br />
+            Bingyang Zhou, Haoyu Zhou, Tianhai Liang, Qiaojun Yu, Siheng Zhao, Yuwei Zeng, <strong>Jun Lv</strong>, Siyuan Luo, Qiancai Wang, Xinyuan Yu, Haonan Chen, Cewu Lu, Lin Shao<br />
+						<em>Under Review</em>
+						<p></p>
+
+						<p></p>
+						</td>
+          </tr>	
+
           <tr onmouseout="difflfd_stop()" onmouseover="difflfd_start()">
 						<td width="30%">
 						<div class="one">
@@ -226,7 +249,7 @@
     </table>
     <ul>
       <li>
-        Conference Reviewer: ICRA'23, CVPR'23, ICCV'23
+        Conference Reviewer: ICRA'23, CVPR'23, IROS'23, ICCV'23
       </li>
 
   </ul>
