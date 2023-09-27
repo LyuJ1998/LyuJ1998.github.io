@@ -2,6 +2,33 @@
 <!DOCTYPE HTML>
 <html lang="en">
 
+<script>
+function copyedNotice() { 
+  // Show the notice and hide it after 2 seconds
+  const notice = document.getElementById("copynotice");
+  notice.classList.remove("hidden");
+  notice.style.opacity = "1";
+  setTimeout(() => {
+      notice.style.opacity = "0";
+      setTimeout(() => {
+          notice.classList.add("hidden");
+      }, 300);  // Wait for opacity transition to complete before hiding
+  }, 2000);
+}
+      function copyToClipboard(predefinedString) {    
+// Create a temporary textarea to utilize the execCommand('copy') method
+const tempTextArea = document.createElement("textarea");
+document.body.appendChild(tempTextArea);
+tempTextArea.value = predefinedString;
+tempTextArea.select();
+document.execCommand("copy");
+document.body.removeChild(tempTextArea);
+
+// alert("Text copied to clipboard: " + predefinedString);
+copyedNotice();
+}
+</script>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Hi, Israel Here. Please DELETE the two <script> tags below if you use this HTML, otherwise my analytics will track your page -->
@@ -55,12 +82,13 @@
 					</tr>
 				</tbody>
 			</table>
+      <div id="copynotice" class="hidden">Bibtex copied to clipboard!</div>
 
 			<table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 				<tbody>
 
           <tr onmouseout="difflfd_stop()" onmouseover="difflfd_start()">
-						<td width="30%">
+						<td width="30%"; valign="top">
 						<div class="one">
 						<div class="two" id="difflfd"><img src="images/difflfd.gif" style="width: 210px;" /></div>
 						<img src="images/difflfd.jpg" style="width: 210px;" /></div>
@@ -71,20 +99,32 @@
         function difflfd_stop() {
         document.getElementById('difflfd').style.opacity = "0";
         }
+        var bibtex_difflfd = `
+        @inproceedings{
+          Zhu2023DiffLfD,
+          title={Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering},
+          author={Zhu, Xinghao and Ke, Jinghan and Xu, Zhixuan and Sun, Zhixin and Bai, Bizhe and Lv, Jun and Liu, Qingtao and Zeng, Yuwei and Ye, Qi and Lu, Cewu and Tomizuka, Masayoshi and Shao, Lin},
+          booktitle={Conference on Robot Learning (CoRL)},
+          year={2023},
+        }
+              `;
+        function copydifflfdToClipboard() {    
+                copyToClipboard(bibtex_difflfd)
+        }
+            
         difflfd_stop()
         </script></td>
-						<td valign="top" width="75%"><papertitle>Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering</papertitle><br />
+						<td valign="top" width="75%"><papertitle>Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering</papertitle><br/>
               <authors>Xinghao Zhu, Jinghan Ke, Zhixuan Xu, Zhixin Sun, Bizhe Bai, <astrong>Jun Lv</astrong>, Qingtao Liu, Yuwei Zeng, Qi Ye, Cewu Lu, Masayoshi Tomizuka, Lin Shao</authors><br />
-						<em>Conference on Robot Learning (CoRL) 2023</em><br />
-            <font color="#c94444">🔊Oral Presentation</font>
-						<p><a href="https://sites.google.com/view/diff-lfd">[website]</a> </p>
-
-						<p></p>
-						</td>
+						<em>Conference on Robot Learning (CoRL) 2023</em> <font color="#c94444">🔊Oral Presentation</font> <br/>
+            <p><a href="https://sites.google.com/view/diff-lfd">Project</a> / <a class="buttona" onclick="copydifflfdToClipboard();">Bibtex</a></p>
+						</td>      
           </tr>	
-
+        </table>
+        
+        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
           <tr onmouseout="clothesnet_stop()" onmouseover="clothesnet_start()">
-						<td width="30%">
+						<td width="30%"; valign="top">
 						<div class="one">
 						<div class="two" id="clothesnet"><img src="images/clothesnet.gif" style="width: 210px;" /></div>
 						<img src="images/clothesnet.jpg" style="width: 210px;" /></div>
@@ -95,19 +135,31 @@
         function clothesnet_stop() {
         document.getElementById('clothesnet').style.opacity = "0";
         }
+        var bibtex_clothesnet = `
+        @article{zhou2023clothesnet,
+          title={ClothesNet: An Information-Rich 3D Garment Model Repository with Simulated Clothes Environment}, 
+          author={Bingyang Zhou and Haoyu Zhou and Tianhai Liang and Qiaojun Yu and Siheng Zhao and Yuwei Zeng and Jun Lv and Siyuan Luo and Qiancai Wang and Xinyuan Yu and Haonan Chen and Cewu Lu and Lin Shao},
+          journal={Proceedings of IEEE/CVF International Conference on Computer Vision (ICCV) },
+          year={2023}
+        }
+              `;
+        function copyclothesnetToClipboard() {    
+                copyToClipboard(bibtex_clothesnet)
+        }
         clothesnet_stop()
         </script></td>
 						<td valign="top" width="75%"><papertitle>	ClothesNet: An Information-Rich 3D Garment Model Repository with Simulated Clothes Environment</papertitle><br />
               <authors>Bingyang Zhou, Haoyu Zhou, Tianhai Liang, Qiaojun Yu, Siheng Zhao, Yuwei Zeng, <astrong>Jun Lv</astrong>, Siyuan Luo, Qiancai Wang, Xinyuan Yu, Haonan Chen, Cewu Lu, Lin Shao</authors></authors><br />
 						<em>IEEE/CVF International Conference on Computer Vision (ICCV) 2023</em><br />
-						<p><a href="https://arxiv.org/abs/2308.09987">[paper]</a> <a href="https://sites.google.com/view/clothesnet/">[website]</a> </p>
+						<p><a href="https://arxiv.org/abs/2308.09987">Paper</a> / <a href="https://sites.google.com/view/clothesnet/">Project</a> / <a class="buttona" onclick="copyclothesnetToClipboard();">Bibtex</a> </p>
 
 						<p></p>
 						</td>
           </tr>	
-        
+        </table>
+        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
           <tr onmouseout="sam_stop()" onmouseover="sam_start()">
-						<td width="30%">
+						<td width="30%"; valign="top">
 						<div class="one">
 						<div class="two" id="sam"><img src="images/SAM-RL.gif" style="width: 210px;" /></div>
 						<img src="images/SAM-RL.png" style="width: 210px;" /></div>
@@ -118,22 +170,33 @@
         function sam_stop() {
         document.getElementById('sam').style.opacity = "0";
         }
+        var bibtex_sam = `
+        @article{lv2022sam,
+          title={SAM-RL: Sensing-Aware Model-Based Reinforcement Learning via Differentiable Physics-Based Simulation and Rendering},
+          author={Lv, Jun and Feng, Yunhai and Zhang, Cheng and Zhao, Shuang and Shao, Lin and Lu, Cewu},
+          journal={Proceedings of Robotics: Science and Systems (RSS)},
+          year={2023}
+        }
+              `;
+        function copysamToClipboard() {    
+                copyToClipboard(bibtex_sam)
+        }
         sam_stop()
         </script></td>
 						<td valign="top" width="75%"><papertitle>	SAM-RL: Sensing-Aware Model-based Reinforcement Learning via Differentiable Physics-based Simulation and Rendering</papertitle><br />
             <authors><astrong>Jun Lv</astrong>, Yunhai Feng, Cheng Zhang, Shuang Zhao, Lin Shao*, Cewu Lu* (*Equal advising)</authors><br />
 						<em>Robotics: Science and Systems (RSS) 2023</em><br />
             <strong><font color="red">🔥Best System Paper Award Finalist</font></strong>
-						<p><a href="https://arxiv.org/abs/2210.15185">[paper]</a> <a href="https://sites.google.com/view/rss-sam-rl">[website]</a> <a href="https://sites.google.com/view/rss-sam-rl">[video]</a></p>
-
+						<p><a href="https://arxiv.org/abs/2210.15185">Paper</a> / <a href="https://sites.google.com/view/rss-sam-rl">Project</a> / <a href="https://sites.google.com/view/rss-sam-rl">Video</a> / <a href="https://drive.google.com/file/d/1CIuzHnI3LRQofl_hDFbHO1eVI4H39_dY/preview">Poster</a> / <a class="buttona" onclick="copysamToClipboard();">Bibtex</a></p>
 						<p></p>
 						</td>
           </tr>	
-
+        </table>
+        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 					<tr onmouseout="artiboost_stop()" onmouseover="artiboost_start()">
-						<td width="30%">
+						<td width="30%"; valign="top">
 						<div class="one">
-						<div class="two" id="artiboost"><img src="images/artiboost.png" style="width: 210px;" /></div>
+						<div class="two" id="artiboost"><img src="images/artiboost_2.png" style="width: 210px;" /></div>
 						<img src="images/artiboost.png" style="width: 210px;" /></div>
 						<script type="text/javascript">
         function artiboost_start() {
@@ -142,21 +205,33 @@
         function artiboost_stop() {
         document.getElementById('artiboost').style.opacity = "0";
         }
+        var bibtex_artiboost = `
+        @inproceedings{yang2021ArtiBoost,
+          title={{ArtiBoost}: Boosting Articulated 3D Hand-Object Pose Estimation via Online Exploration and Synthesis},
+          author={Yang, Lixin and Li, Kailin and Zhan, Xinyu and Lv, Jun and Xu, Wenqiang and Li, Jiefeng and Lu, Cewu},
+          booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+          year={2022}
+        }
+              `;
+        function copyartiboostToClipboard() {    
+                copyToClipboard(bibtex_artiboost)
+        }
         artiboost_stop()
         </script></td>
 						<td valign="top" width="75%"><papertitle>ArtiBoost: Boosting Articulated 3D Hand-Object Pose Estimation via Online Exploration and Synthesis</papertitle><br />
             <authors>Lixin Yang*, Kailin Li*, Xinyu Zhan, <astrong>Jun Lv</astrong>, Wenqiang Xu, Jiefeng Li, Cewu Lu (*Equal contribution)</authors><br />
 						<em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2022</em><br />
             <font color="#c94444">🔊Oral Presentation</font>
-						<p><a href="https://arxiv.org/abs/2109.05488">[paper]</a> <a href="https://github.com/MVIG-SJTU/ArtiBoost">[code]</a> <a href="https://www.youtube.com/watch?v=QbPsjWRyloY">[video]</a></p>
+						<p><a href="https://arxiv.org/abs/2109.05488">Paper</a> / <a href="https://github.com/MVIG-SJTU/ArtiBoost">Code</a> / <a href="https://www.youtube.com/watch?v=QbPsjWRyloY">Video</a> / <a class="buttona" onclick="copyartiboostToClipboard();">Bibtex</a></p>
 
 						<p></p>
 						</td>
           </tr>		
-          
+        </table>
+        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 
           <tr onmouseout="sgci_stop()" onmouseover="sgci_start()">
-						<td width="30%">
+						<td width="30%"; valign="top">
 						<div class="one">
 						<div class="two" id="sgci"><img src="images/sgci.gif" style="width: 210px;" /></div>
 						<img src="images/sgci.png" style="width: 210px;" /></div>
@@ -167,18 +242,32 @@
         function sgci_stop() {
         document.getElementById('sgci').style.opacity = "0";
         }
+        var bibtex_sgci = `
+        @inproceedings{lv2022sagci,
+          title={Sagci-system: Towards sample-efficient, generalizable, compositional, and incremental robot learning},
+          author={Lv, Jun and Yu, Qiaojun and Shao, Lin and Liu, Wenhai and Xu, Wenqiang and Lu, Cewu},
+          booktitle={2022 International Conference on Robotics and Automation (ICRA)},
+          pages={98--105},
+          year={2022},
+          organization={IEEE}
+        }
+              `;
+        function copysgciToClipboard() {    
+                copyToClipboard(bibtex_sgci)
+        }
         sgci_stop()
         </script></td>
 						<td valign="top" width="75%"><papertitle>	SAGCI-System: Towards Sample-Efficient, Generalizable, Compositional, and Incremental Robot Learning</papertitle><br />
             <authors><astrong>Jun Lv*</astrong>, Qiaojun Yu*, Lin Shao*, Wenhai Liu, Wenqiang Xu, Cewu Lu (*Equal contribution)</authors><br />
 						<em>IEEE International Conference on Robotics and Automation (ICRA) 2022</em>
-						<p><a href="https://arxiv.org/abs/2111.14693">[paper]</a> <a href="https://sites.google.com/view/egci">[website]</a> <a href="https://www.youtube.com/watch?v=V3rcTVBktec">[video]</a></p>
+						<p><a href="https://arxiv.org/abs/2111.14693">Paper</a> / <a href="https://sites.google.com/view/egci">Project</a> / <a href="https://www.youtube.com/watch?v=V3rcTVBktec">Video</a> / <a href="https://drive.google.com/file/d/19l23GoKDw19tQDSqfPWXV_FPsqBLnRE_/preview">Poster</a> / <a class="buttona" onclick="copysgciToClipboard();">Bibtex</a></p>
 						<p></p>
 						</td>
           </tr>
-	
+        </table>
+        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
             <tr onmouseout="handtailor_stop()" onmouseover="handtailor_start()">
-              <td width="30%">
+              <td width="30%"; valign="top">
               <div class="one">
               <div class="two" id="handtailor"><img src="images/handtailor.gif" style="width: 210px;" /></div>
               <img src="images/handtailor.png" style="width: 210px;" /></div>
@@ -189,19 +278,31 @@
           function handtailor_stop() {
           document.getElementById('handtailor').style.opacity = "0";
           }
+          var bibtex_handtailor = `
+          @article{lv2021handtailor,
+            title={Handtailor: Towards high-precision monocular 3d hand recovery},
+            author={Lv, Jun and Xu, Wenqiang and Yang, Lixin and Qian, Sucheng and Mao, Chongzhao and Lu, Cewu},
+            journal={British Machine Vision Conference (BMVC) 2021},
+            year={2021}
+          }
+                `;
+          function copyhandtailorToClipboard() {    
+                  copyToClipboard(bibtex_handtailor)
+          }
           handtailor_stop()
           </script></td>
               <td valign="top" width="75%"><papertitle>HandTailor: Towards High-Precision Monocular 3D Hand Recovery</papertitle><br />
               <authors><astrong>Jun Lv</astrong>, Wenqiang Xu, Lixin Yang, Sucheng Qian, Chongzhao Mao, Cewu Lu</authors><br />
               <em>British Machine Vision Conference (BMVC) 2021</em>
-              <p><a href="https://arxiv.org/abs/2102.09244">[paper]</a> <a href="https://github.com/LyuJ1998/HandTailor">[code]</a> <a href="https://sites.google.com/view/handtailor">[website]</a> <a href="https://www.youtube.com/watch?v=LV367SGP2gk&feature=youtu.be">[video]</a></p>
+              <p><a href="https://arxiv.org/abs/2102.09244">Paper</a> / <a href="https://github.com/LyuJ1998/HandTailor">Code</a> / <a href="https://sites.google.com/view/handtailor">Project</a> / <a href="https://www.youtube.com/watch?v=LV367SGP2gk&feature=youtu.be">Video</a> / <a class="buttona" onclick="copyhandtailorToClipboard();">Bibtex</a> </p>
   
               <p></p>
               </td>
             </tr>		
-
+          </table>
+          <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
             <tr onmouseout="pack_stop()" onmouseover="pack_start()">
-              <td width="30%">
+              <td width="30%"; valign="top">
               <div class="one">
               <div class="two" id="6pack"><img src="images/6pack.gif" style="width: 210px;" /></div>
               <img src="images/6pack.png" style="width: 210px;" /></div>
@@ -212,13 +313,26 @@
           function pack_stop() {
           document.getElementById('6pack').style.opacity = "0";
           }
+          var bibtex_pack = `
+          @inproceedings{wang20206,
+            title={6-pack: Category-level 6d pose tracker with anchor-based keypoints},
+            author={Wang, Chen and Mart{\'\i}n-Mart{\'\i}n, Roberto and Xu, Danfei and Lv, Jun and Lu, Cewu and Fei-Fei, Li and Savarese, Silvio and Zhu, Yuke},
+            booktitle={2020 IEEE International Conference on Robotics and Automation (ICRA)},
+            pages={10059--10066},
+            year={2020},
+            organization={IEEE}
+          }
+                `;
+          function copypackToClipboard() {    
+                  copyToClipboard(bibtex_pack)
+          }
           pack_stop()
           </script></td>
               <td valign="top" width="75%"><papertitle>6-PACK:
               Category-level 6D Pose Tracker with Anchor-Based Keypoints</papertitle><br />
               <authors>Chen Wang, Roberto Martin-Martin, Danfei Xu, <astrong>Jun Lv</astrong>, Cewu Lu , Li Fei-Fei, Silvio Savarese, Yuke Zhu</authors><br />
               <em>IEEE International Conference on Robotics and Automation (ICRA) 2020</em>
-              <p><a href="https://arxiv.org/abs/1910.10750">[paper]</a> <a href="https://github.com/j96w/6-PACK">[code]</a> <a href="https://sites.google.com/view/6packtracking">[website]</a> <a href="https://www.youtube.com/watch?v=INBjNZsnfy4&feature=youtu.be">[video]</a></p>
+              <p><a href="https://arxiv.org/abs/1910.10750">Paper</a> / <a href="https://github.com/j96w/6-PACK">Code</a> / <a href="https://sites.google.com/view/6packtracking">Project</a> / <a href="https://www.youtube.com/watch?v=INBjNZsnfy4&feature=youtu.be">Video</a> / <a class="buttona" onclick="copypackToClipboard();">Bibtex</a></p>
   
               <p></p>
               </td>

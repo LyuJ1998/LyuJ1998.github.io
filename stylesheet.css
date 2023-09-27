@@ -64,6 +64,19 @@ name {
   color: #000000;
 }
 
+summary {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 15px;
+  color: #000000;
+}
+
+details {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 15px;
+  color: #000000;
+}
+
+
 .one {
   width: 160px;
   height: 160px;
@@ -85,6 +98,32 @@ name {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
-span.highlight {
-  background-color: #ffffd0;
+.posterbutton {
+  cursor: pointer;
+  color: #000000;
+  font-weight: 450;
+  text-decoration: none;
+}
+
+
+.buttona {
+  cursor: pointer;
+}
+
+#copynotice {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #008002;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 12px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+  display: none;
 }
