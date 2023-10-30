@@ -122,6 +122,7 @@ details {
   padding: 8px 18px;
   border-radius: 12px;
   transition: opacity 0.3s ease-in-out;
+  z-index: 3;
 }
 
 #wechatimg {
@@ -139,6 +140,7 @@ details {
   padding: 8px 18px;
   border-radius: 12px;
   transition: opacity 0.3s ease-in-out;
+  z-index: 2;
 }
 
 .hidden {

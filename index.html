@@ -20,13 +20,13 @@ function Wechat() {
   // Show the notice and hide it after 2 seconds
   const notice = document.getElementById("wechatimg");
   notice.classList.remove("hidden");
-  notice.style.opacity = "2";
+  notice.style.opacity = "1";
   setTimeout(() => {
       notice.style.opacity = "0";
       setTimeout(() => {
           notice.classList.add("hidden");
       }, 300);  // Wait for opacity transition to complete before hiding
-  }, 5000);
+  }, 3000);
 }
       function copyToClipboard(predefinedString) {    
 // Create a temporary textarea to utilize the execCommand('copy') method
