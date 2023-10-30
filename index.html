@@ -15,6 +15,19 @@ function copyedNotice() {
       }, 300);  // Wait for opacity transition to complete before hiding
   }, 2000);
 }
+
+function Wechat() { 
+  // Show the notice and hide it after 2 seconds
+  const notice = document.getElementById("wechatimg");
+  notice.classList.remove("hidden");
+  notice.style.opacity = "2";
+  setTimeout(() => {
+      notice.style.opacity = "0";
+      setTimeout(() => {
+          notice.classList.add("hidden");
+      }, 300);  // Wait for opacity transition to complete before hiding
+  }, 5000);
+}
       function copyToClipboard(predefinedString) {    
 // Create a temporary textarea to utilize the execCommand('copy') method
 const tempTextArea = document.createElement("textarea");
@@ -65,12 +78,13 @@ copyedNotice();
               </p>
 						<p>I am a Ph.D. student at <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University (SJTU)</a>. Currently, I am a member of <a href="https://www.mvig.org/">Machine Vision and Intelligence Group (MVIG)</a> under the supervision of <a href="https://www.mvig.org/">Prof. Cewu Lu</a>. I also worked closely with <a href="https://linsats.github.io/">Prof. Lin Shao</a> on my projects. I received my Bachelor's degree from Shanghai Jiao Tong University in 2020. My research interests include Robotics, Artificial Intelligence and Computer Vision.</p>
 
-						<p align="center"><a href="mailto:1998lvjun@gmail.com">Email</a> &nbsp;/&nbsp; <a href="https://twitter.com/JunLv98">Twitter</a> &nbsp;/&nbsp; <a href="https://github.com/LyuJ1998"> Github </a> &nbsp;/&nbsp; <a href="https://scholar.google.com/citations?user=DtaiAjwAAAAJ&hl=en"> Google Scholar </a></p>
+						<p align="center"><a href="mailto:1998lvjun@gmail.com">Email</a> &nbsp;/&nbsp; <a class="buttona" onclick="Wechat();">Wechat</a> &nbsp;/&nbsp; <a href="https://twitter.com/JunLv98">Twitter(X)</a> &nbsp;/&nbsp; <a href="https://github.com/LyuJ1998"> Github </a> &nbsp;/&nbsp; <a href="https://scholar.google.com/citations?user=DtaiAjwAAAAJ&hl=en"> Google Scholar </a></p>
 						</td>
 						<td width="23%"><img src="images/lvjun.png" alt="profile photo" style="width: 200px;" /></td>
 					</tr>
 				</tbody>
 			</table>
+      <div id="wechatimg" class="hidden"><img src="images/wechat.jpg" style="width: 210px;"  /></div>
 
 
 			<p></p>
