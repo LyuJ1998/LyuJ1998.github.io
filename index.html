@@ -98,6 +98,45 @@ copyedNotice();
 			</table>
       <div id="copynotice" class="hidden">Bibtex copied to clipboard!</div>
 
+      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
+				<tbody>
+
+          <tr onmouseout="diffgen_stop()" onmouseover="diffgen_start()">
+						<td width="30%"; valign="top">
+						<div class="one">
+						<div class="two" id="diffgen"><img src="images/diffgen.gif" style="width: 210px;" /></div>
+						<img src="images/diffgen.png" style="width: 210px;" /></div>
+						<script type="text/javascript">
+        function diffgen_start() {
+        document.getElementById('diffgen').style.opacity = "1";
+        }
+        function diffgen_stop() {
+        document.getElementById('diffgen').style.opacity = "0";
+        }
+        var bibtex_diffgen = `
+        @misc{jin2024diffgen,
+                title={DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model}, 
+                author={Yang Jin and Jun Lv and Shuqiang Jiang and Cewu Lu},
+                year={2024},
+                eprint={2405.07309},
+                archivePrefix={arXiv},
+                primaryClass={cs.RO}
+          }
+        `;
+        function copydiffgenToClipboard() {    
+                copyToClipboard(bibtex_diffgen)
+        }
+            
+        diffgen_stop()
+        </script></td>
+						<td valign="top" width="75%"><papertitle>DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model</papertitle><br/>
+              <authors>Yang Jin*, <astrong>Jun Lv*</astrong>, Shuqiang Jiang, Cewu Lu</authors><br />
+						<em>Preprint</em><br /> 
+            <p><a href="https://arxiv.org/abs/2405.07309">ArXiv</a> / <a class="buttona" onclick="copydiffgenToClipboard();">Bibtex</a></p>
+						</td>      
+          </tr>	
+        </table>
+
 			<table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 				<tbody>
 
@@ -379,22 +418,6 @@ copyedNotice();
           </ul>
         </li>
   
-    </ul>
-
-      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-				<tbody>
-					<tr>
-						<td valign="middle" width="100%"><heading>Invited Talks </heading></td>
-					</tr>
-				</tbody>
-			</table>
-      <ul>
-        <li>
-          May. 2022: <em>SAGCI-System: Towards Sample-Efficient, Generalizable, Compositional, and Incremental Robot Learning</em>. </em> <a href="https://zhidx.com/" target="_blank">智东西</a> / <a href="https://course.zhidx.com/c/ZjRkZDkyMDA5MTVlOGUzNjQyMjM=">Video</a>
-        </li>
-        <li>
-          Mar. 2022: <em>SAGCI-System: Towards Sample-Efficient, Generalizable, Compositional, and Incremental Robot Learning</em>. <em> Workshop on Interactive Perception and Manipulation.</em> <a href="https://adacomp.comp.nus.edu.sg/" target="_blank">AdaComp (National University of Singapore)</a>
-        </li>
     </ul>
 
     
