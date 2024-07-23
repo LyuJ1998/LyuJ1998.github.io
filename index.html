@@ -88,8 +88,8 @@ copyedNotice();
 
 
 			<p></p>
-	
-			<table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
+
+      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 				<tbody>
 					<tr>
 						<td valign="middle" width="100%"><heading>Publications </heading></td>
@@ -97,6 +97,72 @@ copyedNotice();
 				</tbody>
 			</table>
       <div id="copynotice" class="hidden">Bibtex copied to clipboard!</div>
+
+
+      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
+				<tbody>
+
+          <tr onmouseout="hajl_stop()" onmouseover="hajl_stop()">
+						<td width="30%"; valign="top">
+						<div class="one">
+						<div class="two" id="hajl"><img src="images/hajl.png" style="width: 210px;" /></div>
+						<img src="images/hajl.png" style="width: 210px;" /></div>
+						<script type="text/javascript">
+        function hajl_start() {
+        document.getElementById('hajl').style.opacity = "1";
+        }
+        function hajl_stop() {
+        document.getElementById('hajl').style.opacity = "0";
+        }
+        var bibtex_hajl = `
+none
+        `;
+        function copyhajlToClipboard() {    
+                copyToClipboard(bibtex_hajl)
+        }
+            
+        hajl_stop()
+        </script></td>
+						<td valign="top" width="75%"><papertitle>Human-Agent Joint Learning for Efficient Robot Manipulation Skill Acquisition</papertitle><br/>
+              <authors>Shengcheng Luo*, QuanQuan Peng*, <astrong>Jun Lv*</astrong>, Kaiwen Hong, Katherine Rose Driggs-Campbell, Cewu Lu, Yong-Lu Li (*Equal contribution)</authors><br />
+						<em>Preprint</em><br /> 
+            <p><a href="https://arxiv.org/abs/2407.00299">ArXiv</a></p>
+						</td>      
+          </tr>	
+        </table>
+
+      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
+        <tbody>
+
+          <tr onmouseout="tiebot_stop()" onmouseover="tiebot_start()">
+            <td width="30%"; valign="top">
+            <div class="one">
+            <div class="two" id="tiebot"><img src="images/tiebot.gif" style="width: 210px;" /></div>
+            <img src="images/tiebot.png" style="width: 210px;" /></div>
+            <script type="text/javascript">
+        function tiebot_start() {
+        document.getElementById('tiebot').style.opacity = "1";
+        }
+        function tiebot_stop() {
+        document.getElementById('tiebot').style.opacity = "0";
+        }
+        var bibtex_tiebot = `
+        none
+              `;
+        function copytiebotToClipboard() {    
+                copyToClipboard(bibtex_tiebot)
+        }
+
+        tiebot_stop()
+        </script></td>
+            <td valign="top" width="75%"><papertitle>TieBot: Learning to Knot a Tie from Visual Demonstration through a Real-to-Sim-to-Real Approach</papertitle><br/>
+              <authors>Weikun Peng, <astrong>Jun Lv</astrong>, Haonan Chen, Siheng Zhao, Jichen Sun, Cewu Lu, Lin Shao</authors><br />
+            <em>PrePrint</em><br />
+            <p><a href="https://arxiv.org/abs/2407.03245">ArXiv</a></p>
+            <!-- <p><a href="https://sites.google.com/view/tiebot">Project</a> / <a class="buttona" onclick="copytiebotToClipboard();">Bibtex</a></p> -->
+            </td>      
+          </tr>	
+        </table>
 
       <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 				<tbody>
@@ -130,7 +196,7 @@ copyedNotice();
         diffgen_stop()
         </script></td>
 						<td valign="top" width="75%"><papertitle>DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model</papertitle><br/>
-              <authors>Yang Jin*, <astrong>Jun Lv*</astrong>, Shuqiang Jiang, Cewu Lu</authors><br />
+              <authors>Yang Jin*, <astrong>Jun Lv*</astrong>, Shuqiang Jiang†, Cewu Lu† (*Equal contribution, †Equal advising)</authors><br/>
 						<em>Preprint</em><br /> 
             <p><a href="https://arxiv.org/abs/2405.07309">ArXiv</a></p>
 						</td>      
@@ -237,7 +303,7 @@ copyedNotice();
         sam_stop()
         </script></td>
 						<td valign="top" width="75%"><papertitle>	SAM-RL: Sensing-Aware Model-based Reinforcement Learning via Differentiable Physics-based Simulation and Rendering</papertitle><br />
-            <authors><astrong>Jun Lv</astrong>, Yunhai Feng, Cheng Zhang, Shuang Zhao, Lin Shao*, Cewu Lu* (*Equal advising)</authors><br />
+            <authors><astrong>Jun Lv</astrong>, Yunhai Feng, Cheng Zhang, Shuang Zhao, Lin Shao†, Cewu Lu† (†Equal advising)</authors><br />
 						<em>Robotics: Science and Systems (RSS) 2023</em><br />
             <strong><font color="red">🔥Best System Paper Award Finalist</font></strong>
 						<p><a href="https://www.roboticsproceedings.org/rss19/p040.pdf">Paper</a> / <a href="https://arxiv.org/abs/2210.15185">ArXiv</a> / <a href="https://sites.google.com/view/rss-sam-rl">Project</a> / <a href="https://www.youtube.com/watch?v=2xHNPlLVz8c">Video</a> / <a href="https://drive.google.com/file/d/1CIuzHnI3LRQofl_hDFbHO1eVI4H39_dY/preview">Poster</a></p>
