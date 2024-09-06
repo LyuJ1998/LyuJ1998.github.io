@@ -132,39 +132,6 @@ none
         </table>
 
       <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-        <tbody>
-
-          <tr onmouseout="tiebot_stop()" onmouseover="tiebot_start()">
-            <td width="30%"; valign="top">
-            <div class="one">
-            <div class="two" id="tiebot"><img src="images/tiebot.gif" style="width: 210px;" /></div>
-            <img src="images/tiebot.png" style="width: 210px;" /></div>
-            <script type="text/javascript">
-        function tiebot_start() {
-        document.getElementById('tiebot').style.opacity = "1";
-        }
-        function tiebot_stop() {
-        document.getElementById('tiebot').style.opacity = "0";
-        }
-        var bibtex_tiebot = `
-        none
-              `;
-        function copytiebotToClipboard() {    
-                copyToClipboard(bibtex_tiebot)
-        }
-
-        tiebot_stop()
-        </script></td>
-            <td valign="top" width="75%"><papertitle>TieBot: Learning to Knot a Tie from Visual Demonstration through a Real-to-Sim-to-Real Approach</papertitle><br/>
-              <authors>Weikun Peng, <astrong>Jun Lv</astrong>, Haonan Chen, Siheng Zhao, Jichen Sun, Cewu Lu, Lin Shao</authors><br />
-            <em>PrePrint</em><br />
-            <p><a href="https://arxiv.org/abs/2407.03245">ArXiv</a></p>
-            <!-- <p><a href="https://sites.google.com/view/tiebot">Project</a> / <a class="buttona" onclick="copytiebotToClipboard();">Bibtex</a></p> -->
-            </td>      
-          </tr>	
-        </table>
-
-      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 				<tbody>
 
           <tr onmouseout="diffgen_stop()" onmouseover="diffgen_start()">
@@ -202,6 +169,38 @@ none
 						</td>      
           </tr>	
         </table>
+
+        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
+          <tbody>
+  
+            <tr onmouseout="tiebot_stop()" onmouseover="tiebot_start()">
+              <td width="30%"; valign="top">
+              <div class="one">
+              <div class="two" id="tiebot"><img src="images/tiebot.gif" style="width: 210px;" /></div>
+              <img src="images/tiebot.png" style="width: 210px;" /></div>
+              <script type="text/javascript">
+          function tiebot_start() {
+          document.getElementById('tiebot').style.opacity = "1";
+          }
+          function tiebot_stop() {
+          document.getElementById('tiebot').style.opacity = "0";
+          }
+          var bibtex_tiebot = `
+          none
+                `;
+          function copytiebotToClipboard() {    
+                  copyToClipboard(bibtex_tiebot)
+          }
+  
+          tiebot_stop()
+          </script></td>
+              <td valign="top" width="75%"><papertitle>TieBot: Learning to Knot a Tie from Visual Demonstration through a Real-to-Sim-to-Real Approach</papertitle><br/>
+                <authors>Weikun Peng, <astrong>Jun Lv</astrong>, Haonan Chen, Siheng Zhao, Jichen Sun, Cewu Lu, Lin Shao</authors><br />
+              <em>Conference on Robot Learning (CoRL) 2023</em><br />
+              <p><a href="https://arxiv.org/abs/2407.03245">ArXiv</a> / <a href="https://tiebots.github.io">Project</a></p>
+              </td>      
+            </tr>	
+          </table>
 
 			<table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 				<tbody>
@@ -476,6 +475,7 @@ none
             <li>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</li>
             <li>IEEE/CVF International Conference on Computer Vision (ICCV)</li>
             <li>European Conference on Computer Vision (ECCV)</li>
+            <li>AAAI Conference on Artificial Intelligence (AAAI)</li>
           </ul>
         </li>
         <li>
