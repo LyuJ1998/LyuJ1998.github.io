@@ -101,6 +101,38 @@ copyedNotice();
       <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
 				<tbody>
 
+          <tr onmouseout="sime_stop()" onmouseover="sime_stop()">
+						<td width="30%"; valign="top">
+						<div class="one">
+						<div class="two" id="sime"><img src="images/sime.svg" style="width: 210px;" /></div>
+						<img src="images/sime.svg" style="width: 210px;" /></div>
+						<script type="text/javascript">
+        function sime_start() {
+        document.getElementById('sime').style.opacity = "1";
+        }
+        function sime_stop() {
+        document.getElementById('sime').style.opacity = "0";
+        }
+        var bibtex_sime = `
+          none
+        `;
+        function copysimeToClipboard() {    
+                copyToClipboard(bibtex_sime)
+        }
+            
+        sime_stop()
+        </script></td>
+						<td valign="top" width="75%"><papertitle>SIME: Enhancing Policy Self-Improvement with Modal-Level Exploration</papertitle><br/>
+              <authors>Yang Jin*, <astrong>Jun Lv*</astrong>, Wenye Yu, Hongjie Fang, Yong-Lu Li, Cewu Lu (*Equal contribution)</authors><br />
+						<em>Preprint</em><br /> 
+            <p><a href="https://arxiv.org/abs/2505.01396">ArXiv</a> / <a href="https://github.com/EricJin2002/SIME">Code</a> / <a href="https://ericjin2002.github.io/SIME/">Project</a></p>
+						</td>      
+          </tr>	
+        </table>
+        
+      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
+				<tbody>
+
           <tr onmouseout="robosplat_stop()" onmouseover="robosplat_stop()">
 						<td width="30%"; valign="top">
 						<div class="one">
