@@ -1,0 +1,211 @@
+{
+  "publications": [
+    {
+      "id": "sime",
+      "title": "SIME: Enhancing Policy Self-Improvement with Modal-Level Exploration",
+      "authors": "Yang Jin*, Jun Lv*, Wenye Yu, Hongjie Fang, Yong-Lu Li, Cewu Lu (*Equal contribution)",
+      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025",
+      "image": "images/sime.svg",
+      "gif": "images/sime.svg",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2505.01396",
+        "code": "https://github.com/EricJin2002/SIME",
+        "project": "https://ericjin2002.github.io/SIME/"
+      },
+      "bibtex": "none"
+    },
+    {
+      "id": "kdil",
+      "title": "Knowledge-Driven Imitation Learning: Enabling Generalization Across Diverse Conditions",
+      "authors": "Zhuochen Miao*, Jun Lv*, Hongjie Fang, Yang Jin, Cewu Lu (*Equal contribution)",
+      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025",
+      "image": "images/kdil.png",
+      "gif": "images/kdil.png",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2506.21057",
+        "code": "https://github.com/mioam/KnowledgeIL",
+        "project": "https://knowledge-driven.github.io"
+      },
+      "bibtex": ""
+    },
+    {
+      "id": "diffgen",
+      "title": "DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model",
+      "authors": "Yang Jin*, Jun Lv*, Shuqiang Jiang†, Cewu Lu† (*Equal contribution, †Equal advising)",
+      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025",
+      "image": "images/diffgen.png",
+      "gif": "images/diffgen.gif",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2405.07309"
+      },
+      "bibtex": "@misc{jin2024diffgen,\n                title={DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model}, \n                author={Yang Jin and Jun Lv and Shuqiang Jiang and Cewu Lu},\n                year={2024},\n                eprint={2405.07309},\n                archivePrefix={arXiv},\n                primaryClass={cs.RO}\n          }"
+    },
+    {
+      "id": "robosplat",
+      "title": "Novel Demonstration Generation with Gaussian Splatting Enables Robust One-Shot Manipulation",
+      "authors": "Sizhe Yang*, Wenye Yu*, Jia Zeng, Jun Lv, Kerui Ren, Cewu Lu, Dahua Lin, Jiangmiao Pang (*Equal contribution)",
+      "venue": "Robotics: Science and Systems (RSS), 2025",
+      "image": "images/robosplat.gif",
+      "gif": "images/robosplat.gif",
+      "links": {
+        "paper": "https://www.roboticsproceedings.org/rss21/p146.pdf",
+        "arxiv": "https://arxiv.org/abs/2504.13175",
+        "code": "https://github.com/OpenRobotLab/RoboSplat/",
+        "project": "https://yangsizhe.github.io/robosplat/"
+      },
+      "bibtex": "none"
+    },
+    {
+      "id": "airexo2",
+      "title": "AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons",
+      "authors": "Hongjie Fang*, Chenxi Wang*, Yiming Wang*, Jingjing Chen*, Shangning Xia, Jun Lv, Zihao He, Xiyan Yi, Yunhan Guo, Xinyu Zhan, Lixin Yang, Weiming Wang, Cewu Lu, Hao-Shu Fang (*Equal contribution)",
+      "venue": "Preprint",
+      "image": "images/airexo2.gif",
+      "gif": "images/airexo2.gif",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2503.03081",
+        "project": "https://airexo.tech/airexo2/"
+      },
+      "bibtex": "none"
+    },
+    {
+      "id": "hajl",
+      "title": "Human-Agent Joint Learning for Efficient Robot Manipulation Skill Acquisition",
+      "authors": "Shengcheng Luo*, QuanQuan Peng*, Jun Lv*, Kaiwen Hong, Katherine Driggs-Campbell, Cewu Lu, Yong-Lu Li (*Equal contribution)",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA) 2025",
+      "image": "images/hajl.png",
+      "gif": "images/hajl.png",
+      "awards": ["Best Paper Award on Human-Robot Interaction", "Best Conference Paper Award Finalist"],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2407.00299",
+        "project": "https://norweig1an.github.io/HAJL.github.io/"
+      },
+      "bibtex": "none"
+    },
+    {
+      "id": "tiebot",
+      "title": "TieBot: Learning to Knot a Tie from Visual Demonstration through a Real-to-Sim-to-Real Approach",
+      "authors": "Weikun Peng, Jun Lv, Haonan Chen, Siheng Zhao, Jichen Sun, Cewu Lu, Lin Shao",
+      "venue": "Conference on Robot Learning (CoRL) 2024",
+      "image": "images/tiebot.png",
+      "gif": "images/tiebot.gif",
+      "presentation": "Oral Presentation",
+      "links": {
+        "paper": "https://openreview.net/pdf?id=Si2krRESZb",
+        "arxiv": "https://arxiv.org/abs/2407.03245",
+        "project": "https://tiebots.github.io"
+      },
+      "bibtex": "none"
+    },
+    {
+      "id": "difflfd",
+      "title": "Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering",
+      "authors": "Xinghao Zhu, Jinghan Ke, Zhixuan Xu, Zhixin Sun, Bizhe Bai, Jun Lv, Qingtao Liu, Yuwei Zeng, Qi Ye, Cewu Lu, Masayoshi Tomizuka, Lin Shao",
+      "venue": "Conference on Robot Learning (CoRL) 2023",
+      "image": "images/difflfd.jpg",
+      "gif": "images/difflfd.gif",
+      "presentation": "Oral Presentation",
+      "links": {
+        "paper": "https://openreview.net/pdf?id=DYPOvNot5F",
+        "project": "https://sites.google.com/view/diff-lfd"
+      },
+      "bibtex": "@inproceedings{\n          Zhu2023DiffLfD,\n          title={Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering},\n          author={Zhu, Xinghao and Ke, Jinghan and Xu, Zhixuan and Sun, Zhixin and Bai, Bizhe and Lv, Jun and Liu, Qingtao and Zeng, Yuwei and Ye, Qi and Lu, Cewu and Tomizuka, Masayoshi and Shao, Lin},\n          booktitle={Conference on Robot Learning (CoRL)},\n          year={2023},\n        }"
+    },
+    {
+      "id": "clothesnet",
+      "title": "ClothesNet: An Information-Rich 3D Garment Model Repository with Simulated Clothes Environment",
+      "authors": "Bingyang Zhou, Haoyu Zhou, Tianhai Liang, Qiaojun Yu, Siheng Zhao, Yuwei Zeng, Jun Lv, Siyuan Luo, Qiancai Wang, Xinyuan Yu, Haonan Chen, Cewu Lu, Lin Shao",
+      "venue": "IEEE/CVF International Conference on Computer Vision (ICCV) 2023",
+      "image": "images/clothesnet.jpg",
+      "gif": "images/clothesnet.gif",
+      "links": {
+        "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Zhou_ClothesNet_An_Information-Rich_3D_Garment_Model_Repository_with_Simulated_Clothes_ICCV_2023_paper.pdf",
+        "arxiv": "https://arxiv.org/abs/2308.09987",
+        "project": "https://sites.google.com/view/clothesnet/"
+      },
+      "bibtex": "@article{zhou2023clothesnet,\n          title={ClothesNet: An Information-Rich 3D Garment Model Repository with Simulated Clothes Environment}, \n          author={Bingyang Zhou and Haoyu Zhou and Tianhai Liang and Qiaojun Yu and Siheng Zhao and Yuwei Zeng and Jun Lv and Siyuan Luo and Qiancai Wang and Xinyuan Yu and Haonan Chen and Cewu Lu and Lin Shao},\n          journal={Proceedings of IEEE/CVF International Conference on Computer Vision (ICCV) },\n          year={2023}\n        }"
+    },
+    {
+      "id": "sam",
+      "title": "SAM-RL: Sensing-Aware Model-based Reinforcement Learning via Differentiable Physics-based Simulation and Rendering",
+      "authors": "Jun Lv, Yunhai Feng, Cheng Zhang, Shuang Zhao, Lin Shao†, Cewu Lu† (†Equal advising)",
+      "venue": "Robotics: Science and Systems (RSS) 2023",
+      "image": "images/SAM-RL.png",
+      "gif": "images/SAM-RL.gif",
+      "awards": ["Best System Paper Award Finalist"],
+      "journal": "International Journal of Robotics Research (IJRR)",
+      "links": {
+        "paper": "https://www.roboticsproceedings.org/rss19/p040.pdf",
+        "arxiv": "https://arxiv.org/abs/2210.15185",
+        "project": "https://sites.google.com/view/rss-sam-rl",
+        "video": "https://www.youtube.com/watch?v=2xHNPlLVz8c",
+        "poster": "https://drive.google.com/file/d/1CIuzHnI3LRQofl_hDFbHO1eVI4H39_dY/preview"
+      },
+      "bibtex": "@inproceedings{lv2023sam,\n          title={SAM-RL: Sensing-Aware Model-Based Reinforcement Learning via Differentiable Physics-Based Simulation and Rendering},\n          author={Lv, Jun and Feng, Yunhai and Zhang, Cheng and Zhao, Shuang and Shao, Lin and Lu, Cewu},\n          booktitle={Robotics science and systems},\n          year={2023}\n        }"
+    },
+    {
+      "id": "artiboost",
+      "title": "ArtiBoost: Boosting Articulated 3D Hand-Object Pose Estimation via Online Exploration and Synthesis",
+      "authors": "Lixin Yang*, Kailin Li*, Xinyu Zhan, Jun Lv, Wenqiang Xu, Jiefeng Li, Cewu Lu (*Equal contribution)",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2022",
+      "image": "images/artiboost.png",
+      "gif": "images/artiboost.gif",
+      "presentation": "Oral Presentation",
+      "links": {
+        "paper": "https://openaccess.thecvf.com/content/CVPR2022/papers/Yang_ArtiBoost_Boosting_Articulated_3D_Hand-Object_Pose_Estimation_via_Online_Exploration_CVPR_2022_paper.pdf",
+        "arxiv": "https://arxiv.org/abs/2109.05488",
+        "code": "https://github.com/MVIG-SJTU/ArtiBoost",
+        "video": "https://www.youtube.com/watch?v=QbPsjWRyloY"
+      },
+      "bibtex": "@inproceedings{yang2021ArtiBoost,\n          title={{ArtiBoost}: Boosting Articulated 3D Hand-Object Pose Estimation via Online Exploration and Synthesis},\n          author={Yang, Lixin and Li, Kailin and Zhan, Xinyu and Lv, Jun and Xu, Wenqiang and Li, Jiefeng and Lu, Cewu},\n          booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n          year={2022}\n        }"
+    },
+    {
+      "id": "sgci",
+      "title": "SAGCI-System: Towards Sample-Efficient, Generalizable, Compositional, and Incremental Robot Learning",
+      "authors": "Jun Lv*, Qiaojun Yu*, Lin Shao*, Wenhai Liu, Wenqiang Xu, Cewu Lu (*Equal contribution)",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA) 2022",
+      "image": "images/sgci.png",
+      "gif": "images/sgci.gif",
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/document/9811859",
+        "arxiv": "https://arxiv.org/abs/2111.14693",
+        "project": "https://sites.google.com/view/egci",
+        "video": "https://www.youtube.com/watch?v=V3rcTVBktec",
+        "poster": "https://drive.google.com/file/d/19l23GoKDw19tQDSqfPWXV_FPsqBLnRE_/preview"
+      },
+      "bibtex": "@inproceedings{lv2022sagci,\n          title={Sagci-system: Towards sample-efficient, generalizable, compositional, and incremental robot learning},\n          author={Lv, Jun and Yu, Qiaojun and Shao, Lin and Liu, Wenhai and Xu, Wenqiang and Lu, Cewu},\n          booktitle={2022 International Conference on Robotics and Automation (ICRA)},\n          pages={98--105},\n          year={2022},\n          organization={IEEE}\n        }"
+    },
+    {
+      "id": "handtailor",
+      "title": "HandTailor: Towards High-Precision Monocular 3D Hand Recovery",
+      "authors": "Jun Lv, Wenqiang Xu, Lixin Yang, Sucheng Qian, Chongzhao Mao, Cewu Lu",
+      "venue": "British Machine Vision Conference (BMVC) 2021",
+      "image": "images/handtailor.png",
+      "gif": "images/handtailor.gif",
+      "links": {
+        "paper": "https://www.bmvc2021-virtualconference.com/assets/papers/0223.pdf",
+        "arxiv": "https://arxiv.org/abs/2102.09244",
+        "code": "https://github.com/LyuJ1998/HandTailor",
+        "project": "https://sites.google.com/view/handtailor",
+        "video": "https://www.youtube.com/watch?v=LV367SGP2gk&feature=youtu.be"
+      },
+      "bibtex": "@article{lv2021handtailor,\n            title={Handtailor: Towards high-precision monocular 3d hand recovery},\n            author={Lv, Jun and Xu, Wenqiang and Yang, Lixin and Qian, Sucheng and Mao, Chongzhao and Lu, Cewu},\n            journal={British Machine Vision Conference (BMVC) 2021},\n            year={2021}\n          }"
+    },
+    {
+      "id": "6pack",
+      "title": "6-PACK: Category-level 6D Pose Tracker with Anchor-Based Keypoints",
+      "authors": "Chen Wang, Roberto Martin-Martin, Danfei Xu, Jun Lv, Cewu Lu , Li Fei-Fei, Silvio Savarese, Yuke Zhu",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA) 2020",
+      "image": "images/6pack.png",
+      "gif": "images/6pack.gif",
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/abstract/document/9196679",
+        "arxiv": "https://arxiv.org/abs/1910.10750",
+        "code": "https://github.com/j96w/6-PACK",
+        "project": "https://sites.google.com/view/6packtracking",
+        "video": "https://www.youtube.com/watch?v=INBjNZsnfy4&feature=youtu.be"
+      },
+      "bibtex": "@inproceedings{wang20206,\n            title={6-pack: Category-level 6d pose tracker with anchor-based keypoints},\n            author={Wang, Chen and Mart{\\'\\i}n-Mart{\\'\\i}n, Roberto and Xu, Danfei and Lv, Jun and Lu, Cewu and Fei-Fei, Li and Savarese, Silvio and Zhu, Yuke},\n            booktitle={2020 IEEE International Conference on Robotics and Automation (ICRA)},\n            pages={10059--10066},\n            year={2020},\n            organization={IEEE}\n          }"
+    }
+  ]
+} 

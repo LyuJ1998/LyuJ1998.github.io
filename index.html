@@ -42,7 +42,7 @@ copyedNotice();
 }
 </script>
 
-<head">
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Hi, Israel Here. Please DELETE the two <script> tags below if you use this HTML, otherwise my analytics will track your page -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -63,6 +63,113 @@ copyedNotice();
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/noematrix.png">
+  
+  <script>
+    // Load and render publications from JSON configuration
+    async function loadPublications() {
+      try {
+        const response = await fetch('publications.json');
+        const data = await response.json();
+        const container = document.getElementById('publications-container');
+        
+        data.publications.forEach(publication => {
+          const publicationHTML = createPublicationHTML(publication);
+          container.innerHTML += publicationHTML;
+        });
+        
+        // Initialize all publication interactions after rendering
+        initializePublicationInteractions();
+      } catch (error) {
+        console.error('Error loading publications:', error);
+      }
+    }
+    
+    function createPublicationHTML(pub) {
+      const linksHTML = createLinksHTML(pub.links);
+      const awardsHTML = pub.awards ? pub.awards.map(award => 
+        `<strong><font color="red">🔥${award}</font></strong><br />`
+      ).join('') : '';
+      
+      const presentationHTML = pub.presentation ? 
+        `<font color="#c94444">🔊${pub.presentation}</font><br />` : '';
+      
+      const journalHTML = pub.journal ? 
+        `<em>${pub.journal}</em><br />` : '';
+      
+      return `
+        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
+          <tbody>
+            <tr onmouseout="${pub.id}_stop()" onmouseover="${pub.id}_start()">
+              <td width="30%" valign="top">
+                <div class="one">
+                  <div class="two" id="${pub.id}">
+                    <img src="${pub.gif}" style="width: 210px;border-radius: 5px;" />
+                  </div>
+                  <img src="${pub.image}" style="width: 210px;border-radius: 5px;" />
+                </div>
+              </td>
+              <td valign="top" width="75%">
+                <papertitle>${pub.title}</papertitle><br/>
+                <authors>${pub.authors}</authors><br />
+                <em>${pub.venue}</em><br /> 
+                ${awardsHTML}
+                ${presentationHTML}
+                ${journalHTML}
+                <p>${linksHTML}</p>
+              </td>      
+            </tr>	
+          </tbody>
+        </table>
+      `;
+    }
+    
+    function createLinksHTML(links) {
+      if (!links) return '';
+      
+      const linkTypes = {
+        'paper': 'Paper',
+        'arxiv': 'ArXiv',
+        'code': 'Code',
+        'project': 'Project',
+        'video': 'Video',
+        'poster': 'Poster'
+      };
+      
+      const linkArray = [];
+      Object.entries(links).forEach(([type, url]) => {
+        if (url && url !== 'none') {
+          linkArray.push(`<a href="${url}">${linkTypes[type] || type}</a>`);
+        }
+      });
+      
+      return linkArray.join(' / ');
+    }
+    
+    function initializePublicationInteractions() {
+      // Create hover functions for each publication
+      const publications = document.querySelectorAll('[onmouseout]');
+      publications.forEach(pub => {
+        const pubId = pub.getAttribute('onmouseout').replace('_stop()', '');
+        
+        // Create start and stop functions
+        window[`${pubId}_start`] = function() {
+          const element = document.getElementById(pubId);
+          if (element) element.style.opacity = "1";
+        };
+        
+        window[`${pubId}_stop`] = function() {
+          const element = document.getElementById(pubId);
+          if (element) element.style.opacity = "0";
+        };
+        
+        // Initialize opacity
+        window[`${pubId}_stop`]();
+      });
+    }
+    
+    // Load publications when page loads
+    document.addEventListener('DOMContentLoaded', loadPublications);
+  </script>
 </head>
 
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="800">
@@ -76,12 +183,12 @@ copyedNotice();
               <p style="text-align:center">
                 <name>Jun Lv</name>
               </p>
-						<p>I am a reseach scientist at <a href="https://www.noematrix.ai">Noematrix</a>.  Prior to that, I pursued my Ph.D at <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University (SJTU)</a> under the supervision of <a href="https://www.mvig.org/">Prof. Cewu Lu</a> in 2025. I received my Bachelor's degree from Shanghai Jiao Tong University in 2020. My research interests include Robotics, Artificial Intelligence and Computer Vision.</p>
-            <p>Currently, I continue to collaborate closely with Prof. Cewu Lu’s team while working as a research scientist at Noematrix. We are actively hiring both in the lab and at the company. If you are interested, feel free to reach out!</p>
+						<p>I am a research scientist at <a href="https://www.noematrix.ai">Noematrix</a>. I received my Ph.D. from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University (SJTU)</a> in 2025, where I was advised by <a href="https://www.mvig.org/">Prof. Cewu Lu</a>. I obtained my Bachelor's degree from SJTU in 2020.</p>
+            <p>I maintain close collaborations with Prof. Cewu Lu's research group while working at Noematrix. Both the lab and the company are actively seeking talented researchers and engineers. If you are interested in joining our team, please feel free to reach out!</p>
 
 						<p align="center"><a href="mailto:1998lvjun@gmail.com">Email</a> &nbsp;/&nbsp; <a href="https://twitter.com/JunLv98">Twitter(X)</a> &nbsp;/&nbsp; <a href="https://github.com/LyuJ1998"> Github </a> &nbsp;/&nbsp; <a href="https://scholar.google.com/citations?user=DtaiAjwAAAAJ&hl=en"> Google Scholar </a></p>
 						</td>
-						<td width="23%"><img src="images/lvjun-2.jpeg" alt="profile photo" style="width: 200px; border-radius: 10px;" /></td>
+						<td width="23%"><img src="images/lvjun-2.jpeg" alt="profile photo" style="width: 220px; border-radius: 10px;" /></td>
 					</tr>
 				</tbody>
 			</table>
@@ -99,502 +206,7 @@ copyedNotice();
 			</table>
       <div id="copynotice" class="hidden">Bibtex copied to clipboard!</div>
 
-      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-				<tbody>
-
-          <tr onmouseout="sime_stop()" onmouseover="sime_stop()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="sime"><img src="images/sime.svg" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/sime.svg" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function sime_start() {
-        document.getElementById('sime').style.opacity = "1";
-        }
-        function sime_stop() {
-        document.getElementById('sime').style.opacity = "0";
-        }
-        var bibtex_sime = `
-          none
-        `;
-        function copysimeToClipboard() {    
-                copyToClipboard(bibtex_sime)
-        }
-            
-        sime_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>SIME: Enhancing Policy Self-Improvement with Modal-Level Exploration</papertitle><br/>
-              <authors>Yang Jin*, <astrong>Jun Lv*</astrong>, Wenye Yu, Hongjie Fang, Yong-Lu Li, Cewu Lu (*Equal contribution)</authors><br />
-						<em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025</em><br /> 
-            <p><a href="https://arxiv.org/abs/2505.01396">ArXiv</a> / <a href="https://github.com/EricJin2002/SIME">Code</a> / <a href="https://ericjin2002.github.io/SIME/">Project</a></p>
-						</td>      
-          </tr>	
-        </table>
-
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-				<tbody>
-
-          <tr onmouseout="kdil_stop()" onmouseover="kdil_start()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="kdil"><img src="images/kdil.png" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/kdil.png" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function kdil_start() {
-        document.getElementById('kdil').style.opacity = "1";
-        }
-        function kdil_stop() {
-        document.getElementById('kdil').style.opacity = "0";
-        }
-        var bibtex_kdil = `
-
-        `;
-        function copykdilToClipboard() {    
-                copyToClipboard(bibtex_kdil)
-        }
-            
-        kdil_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>Knowledge-Driven Imitation Learning: Enabling Generalization Across Diverse Conditions</papertitle><br/>
-              <authors>Zhuochen Miao*, <astrong>Jun Lv*</astrong>, Hongjie Fang, Yang Jin, Cewu Lu (*Equal contribution)</authors><br/>
-						<em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025</em><br /> 
-            <p><a href="https://arxiv.org/abs/2506.21057">ArXiv</a> / <a href="https://github.com/mioam/KnowledgeIL">Code</a> / <a href="https://knowledge-driven.github.io">Project</p>
-						</td>      
-          </tr>	
-        </table>
-
-
-
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-				<tbody>
-
-          <tr onmouseout="diffgen_stop()" onmouseover="diffgen_start()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="diffgen"><img src="images/diffgen.gif" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/diffgen.png" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function diffgen_start() {
-        document.getElementById('diffgen').style.opacity = "1";
-        }
-        function diffgen_stop() {
-        document.getElementById('diffgen').style.opacity = "0";
-        }
-        var bibtex_diffgen = `
-        @misc{jin2024diffgen,
-                title={DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model}, 
-                author={Yang Jin and Jun Lv and Shuqiang Jiang and Cewu Lu},
-                year={2024},
-                eprint={2405.07309},
-                archivePrefix={arXiv},
-                primaryClass={cs.RO}
-          }
-        `;
-        function copydiffgenToClipboard() {    
-                copyToClipboard(bibtex_diffgen)
-        }
-            
-        diffgen_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model</papertitle><br/>
-              <authors>Yang Jin*, <astrong>Jun Lv*</astrong>, Shuqiang Jiang†, Cewu Lu† (*Equal contribution, †Equal advising)</authors><br/>
-						<em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025</em><br /> 
-            <p><a href="https://arxiv.org/abs/2405.07309">ArXiv</a></p>
-						</td>      
-          </tr>	
-        </table>
-        
-      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-				<tbody>
-
-          <tr onmouseout="robosplat_stop()" onmouseover="robosplat_stop()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="robosplat"><img src="images/robosplat.gif" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/robosplat.gif" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function robosplat_start() {
-        document.getElementById('robosplat').style.opacity = "1";
-        }
-        function robosplat_stop() {
-        document.getElementById('robosplat').style.opacity = "0";
-        }
-        var bibtex_robosplat = `
-          none
-        `;
-        function copyrobosplatToClipboard() {    
-                copyToClipboard(bibtex_robosplat)
-        }
-            
-        robosplat_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>Novel Demonstration Generation with Gaussian Splatting Enables Robust One-Shot Manipulation</papertitle><br/>
-              <authors>Sizhe Yang*, Wenye Yu*, Jia Zeng, <astrong> Jun Lv</astrong>, Kerui Ren, Cewu Lu, Dahua Lin, Jiangmiao Pang (*Equal contribution)</authors><br />
-						<em>Robotics: Science and Systems (RSS), 2025</em><br /> 
-            <p><a href="https://www.roboticsproceedings.org/rss21/p146.pdf">Paper</a> / <a href="https://arxiv.org/abs/2504.13175">ArXiv</a> / <a href="https://github.com/OpenRobotLab/RoboSplat/">Code</a> / <a href="https://yangsizhe.github.io/robosplat/">Project</a></p>
-						</td>      
-          </tr>	
-        </table>
-
-
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-          <tbody>
-  
-            <tr onmouseout="airexo2_stop()" onmouseover="airexo2_stop()">
-              <td width="30%"; valign="top">
-              <div class="one">
-              <div class="two" id="airexo2"><img src="images/airexo2.gif" style="width: 210px;border-radius: 5px;" /></div>
-              <img src="images/airexo2.gif" style="width: 210px;border-radius: 5px;" /></div>
-              <script type="text/javascript">
-          function airexo2_start() {
-          document.getElementById('airexo2').style.opacity = "1";
-          }
-          function airexo2_stop() {
-          document.getElementById('airexo2').style.opacity = "0";
-          }
-          var bibtex_airexo2 = `
-            none
-          `;
-          function copyairexo2ToClipboard() {    
-                  copyToClipboard(bibtex_airexo2)
-          }
-              
-          airexo2_stop()
-          </script></td>
-              <td valign="top" width="75%"><papertitle>AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons</papertitle><br/>
-                <authors>Hongjie Fang*, Chenxi Wang*, Yiming Wang*, Jingjing Chen*, Shangning Xia, <astrong> Jun Lv</astrong>, Zihao He, Xiyan Yi, Yunhan Guo, Xinyu Zhan, Lixin Yang, Weiming Wang, Cewu Lu, Hao-Shu Fang (*Equal contribution)</authors><br />
-              <em>Preprint</em><br /> 
-              <p><a href="https://arxiv.org/abs/2503.03081">ArXiv</a> / <a href="https://airexo.tech/airexo2/">Project</a></p>
-              </td>      
-            </tr>	
-          </table>
-  
-
-
-      <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-				<tbody>
-
-          <tr onmouseout="hajl_stop()" onmouseover="hajl_stop()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="hajl"><img src="images/hajl.png" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/hajl.png" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function hajl_start() {
-        document.getElementById('hajl').style.opacity = "1";
-        }
-        function hajl_stop() {
-        document.getElementById('hajl').style.opacity = "0";
-        }
-        var bibtex_hajl = `
-          none
-        `;
-        function copyhajlToClipboard() {    
-                copyToClipboard(bibtex_hajl)
-        }
-            
-        hajl_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>Human-Agent Joint Learning for Efficient Robot Manipulation Skill Acquisition</papertitle><br/>
-              <authors>Shengcheng Luo*, QuanQuan Peng*, <astrong>Jun Lv*</astrong>, Kaiwen Hong, Katherine Driggs-Campbell, Cewu Lu, Yong-Lu Li (*Equal contribution)</authors><br />
-						<em>IEEE International Conference on Robotics and Automation (ICRA) 2025</em><br /> 
-            <strong><font color="red">🔥Best Paper Award on Human-Robot Interaction</font></strong><br />
-            <strong><font color="red">🔥Best Conference Paper Award Finalist</font></strong><br />
-            <p><a href="https://arxiv.org/abs/2407.00299">ArXiv</a> / <a href="https://norweig1an.github.io/HAJL.github.io/">Project</a></p>
-						</td>      
-          </tr>	
-        </table>
-
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-          <tbody>
-  
-            <tr onmouseout="tiebot_stop()" onmouseover="tiebot_start()">
-              <td width="30%"; valign="top">
-              <div class="one">
-              <div class="two" id="tiebot"><img src="images/tiebot.gif" style="width: 210px;border-radius: 5px;" /></div>
-              <img src="images/tiebot.png" style="width: 210px;border-radius: 5px;" /></div>
-              <script type="text/javascript">
-          function tiebot_start() {
-          document.getElementById('tiebot').style.opacity = "1";
-          }
-          function tiebot_stop() {
-          document.getElementById('tiebot').style.opacity = "0";
-          }
-          var bibtex_tiebot = `
-          none
-                `;
-          function copytiebotToClipboard() {    
-                  copyToClipboard(bibtex_tiebot)
-          }
-  
-          tiebot_stop()
-          </script></td>
-              <td valign="top" width="75%"><papertitle>TieBot: Learning to Knot a Tie from Visual Demonstration through a Real-to-Sim-to-Real Approach</papertitle><br/>
-                <authors>Weikun Peng, <astrong>Jun Lv</astrong>, Haonan Chen, Siheng Zhao, Jichen Sun, Cewu Lu, Lin Shao</authors><br />
-              <em>Conference on Robot Learning (CoRL) 2024</em>
-              <font color="#c94444">🔊Oral Presentation</font>
-              <p><a href="https://openreview.net/pdf?id=Si2krRESZb">Paper</a> / <a href="https://arxiv.org/abs/2407.03245">ArXiv</a> / <a href="https://tiebots.github.io">Project</a></p>
-              </td>      
-            </tr>	
-          </table>
-
-			<table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-				<tbody>
-
-          <tr onmouseout="difflfd_stop()" onmouseover="difflfd_start()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="difflfd"><img src="images/difflfd.gif" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/difflfd.jpg" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function difflfd_start() {
-        document.getElementById('difflfd').style.opacity = "1";
-        }
-        function difflfd_stop() {
-        document.getElementById('difflfd').style.opacity = "0";
-        }
-        var bibtex_difflfd = `
-        @inproceedings{
-          Zhu2023DiffLfD,
-          title={Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering},
-          author={Zhu, Xinghao and Ke, Jinghan and Xu, Zhixuan and Sun, Zhixin and Bai, Bizhe and Lv, Jun and Liu, Qingtao and Zeng, Yuwei and Ye, Qi and Lu, Cewu and Tomizuka, Masayoshi and Shao, Lin},
-          booktitle={Conference on Robot Learning (CoRL)},
-          year={2023},
-        }
-              `;
-        function copydifflfdToClipboard() {    
-                copyToClipboard(bibtex_difflfd)
-        }
-            
-        difflfd_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering</papertitle><br/>
-              <authors>Xinghao Zhu, Jinghan Ke, Zhixuan Xu, Zhixin Sun, Bizhe Bai, <astrong>Jun Lv</astrong>, Qingtao Liu, Yuwei Zeng, Qi Ye, Cewu Lu, Masayoshi Tomizuka, Lin Shao</authors><br />
-						<em>Conference on Robot Learning (CoRL) 2023</em>
-            <font color="#c94444">🔊Oral Presentation</font> <br/>
-            <p><a href="https://openreview.net/pdf?id=DYPOvNot5F">Paper</a> / <a href="https://sites.google.com/view/diff-lfd">Project</a></p>
-						</td>      
-          </tr>	
-        </table>
-        
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-          <tr onmouseout="clothesnet_stop()" onmouseover="clothesnet_start()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="clothesnet"><img src="images/clothesnet.gif" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/clothesnet.jpg" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function clothesnet_start() {
-        document.getElementById('clothesnet').style.opacity = "1";
-        }
-        function clothesnet_stop() {
-        document.getElementById('clothesnet').style.opacity = "0";
-        }
-        var bibtex_clothesnet = `
-        @article{zhou2023clothesnet,
-          title={ClothesNet: An Information-Rich 3D Garment Model Repository with Simulated Clothes Environment}, 
-          author={Bingyang Zhou and Haoyu Zhou and Tianhai Liang and Qiaojun Yu and Siheng Zhao and Yuwei Zeng and Jun Lv and Siyuan Luo and Qiancai Wang and Xinyuan Yu and Haonan Chen and Cewu Lu and Lin Shao},
-          journal={Proceedings of IEEE/CVF International Conference on Computer Vision (ICCV) },
-          year={2023}
-        }
-              `;
-        function copyclothesnetToClipboard() {    
-                copyToClipboard(bibtex_clothesnet)
-        }
-        clothesnet_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>	ClothesNet: An Information-Rich 3D Garment Model Repository with Simulated Clothes Environment</papertitle><br />
-              <authors>Bingyang Zhou, Haoyu Zhou, Tianhai Liang, Qiaojun Yu, Siheng Zhao, Yuwei Zeng, <astrong>Jun Lv</astrong>, Siyuan Luo, Qiancai Wang, Xinyuan Yu, Haonan Chen, Cewu Lu, Lin Shao</authors></authors><br />
-						<em>IEEE/CVF International Conference on Computer Vision (ICCV) 2023</em><br />
-						<p><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhou_ClothesNet_An_Information-Rich_3D_Garment_Model_Repository_with_Simulated_Clothes_ICCV_2023_paper.pdf">Paper</a> / <a href="https://arxiv.org/abs/2308.09987">ArXiv</a> /  <a href="https://sites.google.com/view/clothesnet/">Project</a> </p>
-
-						<p></p>
-						</td>
-          </tr>	
-        </table>
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-          <tr onmouseout="sam_stop()" onmouseover="sam_start()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="sam"><img src="images/SAM-RL.gif" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/SAM-RL.png" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function sam_start() {
-        document.getElementById('sam').style.opacity = "1";
-        }
-        function sam_stop() {
-        document.getElementById('sam').style.opacity = "0";
-        }
-        var bibtex_sam = `
-        @inproceedings{lv2023sam,
-          title={SAM-RL: Sensing-Aware Model-Based Reinforcement Learning via Differentiable Physics-Based Simulation and Rendering},
-          author={Lv, Jun and Feng, Yunhai and Zhang, Cheng and Zhao, Shuang and Shao, Lin and Lu, Cewu},
-          booktitle={Robotics science and systems},
-          year={2023}
-        }
-              `;
-        function copysamToClipboard() {    
-                copyToClipboard(bibtex_sam)
-        }
-        sam_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>	SAM-RL: Sensing-Aware Model-based Reinforcement Learning via Differentiable Physics-based Simulation and Rendering</papertitle><br />
-            <authors><astrong>Jun Lv</astrong>, Yunhai Feng, Cheng Zhang, Shuang Zhao, Lin Shao†, Cewu Lu† (†Equal advising)</authors><br />
-						<em>Robotics: Science and Systems (RSS) 2023</em><br />
-            <strong><font color="red">🔥Best System Paper Award Finalist</font></strong><br />
-            <em>International Journal of Robotics Research (IJRR)</em><br />
-						<p><a href="https://www.roboticsproceedings.org/rss19/p040.pdf">Paper</a> / <a href="https://arxiv.org/abs/2210.15185">ArXiv</a> / <a href="https://sites.google.com/view/rss-sam-rl">Project</a> / <a href="https://www.youtube.com/watch?v=2xHNPlLVz8c">Video</a> / <a href="https://drive.google.com/file/d/1CIuzHnI3LRQofl_hDFbHO1eVI4H39_dY/preview">Poster</a></p>
-						<p></p>
-						</td>
-          </tr>	
-        </table>
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-					<tr onmouseout="artiboost_stop()" onmouseover="artiboost_start()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="artiboost"><img src="images/artiboost.gif" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/artiboost.png" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function artiboost_start() {
-        document.getElementById('artiboost').style.opacity = "1";
-        }
-        function artiboost_stop() {
-        document.getElementById('artiboost').style.opacity = "0";
-        }
-        var bibtex_artiboost = `
-        @inproceedings{yang2021ArtiBoost,
-          title={{ArtiBoost}: Boosting Articulated 3D Hand-Object Pose Estimation via Online Exploration and Synthesis},
-          author={Yang, Lixin and Li, Kailin and Zhan, Xinyu and Lv, Jun and Xu, Wenqiang and Li, Jiefeng and Lu, Cewu},
-          booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-          year={2022}
-        }
-              `;
-        function copyartiboostToClipboard() {    
-                copyToClipboard(bibtex_artiboost)
-        }
-        artiboost_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>ArtiBoost: Boosting Articulated 3D Hand-Object Pose Estimation via Online Exploration and Synthesis</papertitle><br />
-            <authors>Lixin Yang*, Kailin Li*, Xinyu Zhan, <astrong>Jun Lv</astrong>, Wenqiang Xu, Jiefeng Li, Cewu Lu (*Equal contribution)</authors><br />
-						<em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2022</em>
-            <font color="#c94444">🔊Oral Presentation</font>
-						<p><a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Yang_ArtiBoost_Boosting_Articulated_3D_Hand-Object_Pose_Estimation_via_Online_Exploration_CVPR_2022_paper.pdf">Paper</a> / <a href="https://arxiv.org/abs/2109.05488">ArXiv</a> / <a href="https://github.com/MVIG-SJTU/ArtiBoost">Code</a> / <a href="https://www.youtube.com/watch?v=QbPsjWRyloY">Video</a></p>
-
-						<p></p>
-						</td>
-          </tr>		
-        </table>
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-
-          <tr onmouseout="sgci_stop()" onmouseover="sgci_start()">
-						<td width="30%"; valign="top">
-						<div class="one">
-						<div class="two" id="sgci"><img src="images/sgci.gif" style="width: 210px;border-radius: 5px;" /></div>
-						<img src="images/sgci.png" style="width: 210px;border-radius: 5px;" /></div>
-						<script type="text/javascript">
-        function sgci_start() {
-        document.getElementById('sgci').style.opacity = "1";
-        }
-        function sgci_stop() {
-        document.getElementById('sgci').style.opacity = "0";
-        }
-        var bibtex_sgci = `
-        @inproceedings{lv2022sagci,
-          title={Sagci-system: Towards sample-efficient, generalizable, compositional, and incremental robot learning},
-          author={Lv, Jun and Yu, Qiaojun and Shao, Lin and Liu, Wenhai and Xu, Wenqiang and Lu, Cewu},
-          booktitle={2022 International Conference on Robotics and Automation (ICRA)},
-          pages={98--105},
-          year={2022},
-          organization={IEEE}
-        }
-              `;
-        function copysgciToClipboard() {    
-                copyToClipboard(bibtex_sgci)
-        }
-        sgci_stop()
-        </script></td>
-						<td valign="top" width="75%"><papertitle>	SAGCI-System: Towards Sample-Efficient, Generalizable, Compositional, and Incremental Robot Learning</papertitle><br />
-            <authors><astrong>Jun Lv*</astrong>, Qiaojun Yu*, Lin Shao*, Wenhai Liu, Wenqiang Xu, Cewu Lu (*Equal contribution)</authors><br />
-						<em>IEEE International Conference on Robotics and Automation (ICRA) 2022</em>
-						<p><a href="https://ieeexplore.ieee.org/document/9811859">Paper</a> / <a href="https://arxiv.org/abs/2111.14693">ArXiv</a> / <a href="https://sites.google.com/view/egci">Project</a> / <a href="https://www.youtube.com/watch?v=V3rcTVBktec">Video</a> / <a href="https://drive.google.com/file/d/19l23GoKDw19tQDSqfPWXV_FPsqBLnRE_/preview">Poster</a></p>
-						<p></p>
-						</td>
-          </tr>
-        </table>
-        <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-            <tr onmouseout="handtailor_stop()" onmouseover="handtailor_start()">
-              <td width="30%"; valign="top">
-              <div class="one">
-              <div class="two" id="handtailor"><img src="images/handtailor.gif" style="width: 210px;border-radius: 5px;" /></div>
-              <img src="images/handtailor.png" style="width: 210px;border-radius: 5px;" /></div>
-              <script type="text/javascript">
-          function handtailor_start() {
-          document.getElementById('handtailor').style.opacity = "1";
-          }
-          function handtailor_stop() {
-          document.getElementById('handtailor').style.opacity = "0";
-          }
-          var bibtex_handtailor = `
-          @article{lv2021handtailor,
-            title={Handtailor: Towards high-precision monocular 3d hand recovery},
-            author={Lv, Jun and Xu, Wenqiang and Yang, Lixin and Qian, Sucheng and Mao, Chongzhao and Lu, Cewu},
-            journal={British Machine Vision Conference (BMVC) 2021},
-            year={2021}
-          }
-                `;
-          function copyhandtailorToClipboard() {    
-                  copyToClipboard(bibtex_handtailor)
-          }
-          handtailor_stop()
-          </script></td>
-              <td valign="top" width="75%"><papertitle>HandTailor: Towards High-Precision Monocular 3D Hand Recovery</papertitle><br />
-              <authors><astrong>Jun Lv</astrong>, Wenqiang Xu, Lixin Yang, Sucheng Qian, Chongzhao Mao, Cewu Lu</authors><br />
-              <em>British Machine Vision Conference (BMVC) 2021</em>
-              <p><a href="https://www.bmvc2021-virtualconference.com/assets/papers/0223.pdf">Paper</a> / <a href="https://arxiv.org/abs/2102.09244">ArXiv</a> / <a href="https://github.com/LyuJ1998/HandTailor">Code</a> / <a href="https://sites.google.com/view/handtailor">Project</a> / <a href="https://www.youtube.com/watch?v=LV367SGP2gk&feature=youtu.be">Video</a></p>
-  
-              <p></p>
-              </td>
-            </tr>		
-          </table>
-          <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
-            <tr onmouseout="pack_stop()" onmouseover="pack_start()">
-              <td width="30%"; valign="top">
-              <div class="one">
-              <div class="two" id="6pack"><img src="images/6pack.gif" style="width: 210px;border-radius: 5px;" /></div>
-              <img src="images/6pack.png" style="width: 210px;border-radius: 5px;" /></div>
-              <script type="text/javascript">
-          function pack_start() {
-          document.getElementById('6pack').style.opacity = "1";
-          }
-          function pack_stop() {
-          document.getElementById('6pack').style.opacity = "0";
-          }
-          var bibtex_pack = `
-          @inproceedings{wang20206,
-            title={6-pack: Category-level 6d pose tracker with anchor-based keypoints},
-            author={Wang, Chen and Mart{\'\i}n-Mart{\'\i}n, Roberto and Xu, Danfei and Lv, Jun and Lu, Cewu and Fei-Fei, Li and Savarese, Silvio and Zhu, Yuke},
-            booktitle={2020 IEEE International Conference on Robotics and Automation (ICRA)},
-            pages={10059--10066},
-            year={2020},
-            organization={IEEE}
-          }
-                `;
-          function copypackToClipboard() {    
-                  copyToClipboard(bibtex_pack)
-          }
-          pack_stop()
-          </script></td>
-              <td valign="top" width="75%"><papertitle>6-PACK:
-              Category-level 6D Pose Tracker with Anchor-Based Keypoints</papertitle><br />
-              <authors>Chen Wang, Roberto Martin-Martin, Danfei Xu, <astrong>Jun Lv</astrong>, Cewu Lu , Li Fei-Fei, Silvio Savarese, Yuke Zhu</authors><br />
-              <em>IEEE International Conference on Robotics and Automation (ICRA) 2020</em>
-              <p><a href="https://ieeexplore.ieee.org/abstract/document/9196679">Paper</a> / <a href="https://arxiv.org/abs/1910.10750">ArXiv</a> / <a href="https://github.com/j96w/6-PACK">Code</a> / <a href="https://sites.google.com/view/6packtracking">Project</a> / <a href="https://www.youtube.com/watch?v=INBjNZsnfy4&feature=youtu.be">Video</a></p>
-  
-              <p></p>
-              </td>
-            </tr>		
-				</tbody>
-			</table>
+      <div id="publications-container"></div>
 
       <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
         <tbody>
