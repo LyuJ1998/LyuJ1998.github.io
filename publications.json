@@ -1,6 +1,19 @@
 {
   "publications": [
     {
+      "id": "airexo2",
+      "title": "AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons",
+      "authors": "Hongjie Fang*, Chenxi Wang*, Yiming Wang*, Jingjing Chen*, Shangning Xia, Jun Lv, Zihao He, Xiyan Yi, Yunhan Guo, Xinyu Zhan, Lixin Yang, Weiming Wang, Cewu Lu, Hao-Shu Fang (*Equal contribution)",
+      "venue": "Conference on Robot Learning (CoRL) 2025",
+      "image": "images/airexo2.gif",
+      "gif": "images/airexo2.gif",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2503.03081",
+        "project": "https://airexo.tech/airexo2/"
+      },
+      "bibtex": "none"
+    },
+    {
       "id": "sime",
       "title": "SIME: Enhancing Policy Self-Improvement with Modal-Level Exploration",
       "authors": "Yang Jin*, Jun Lv*, Wenye Yu, Hongjie Fang, Yong-Lu Li, Cewu Lu (*Equal contribution)",
@@ -52,19 +65,6 @@
         "arxiv": "https://arxiv.org/abs/2504.13175",
         "code": "https://github.com/OpenRobotLab/RoboSplat/",
         "project": "https://yangsizhe.github.io/robosplat/"
-      },
-      "bibtex": "none"
-    },
-    {
-      "id": "airexo2",
-      "title": "AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons",
-      "authors": "Hongjie Fang*, Chenxi Wang*, Yiming Wang*, Jingjing Chen*, Shangning Xia, Jun Lv, Zihao He, Xiyan Yi, Yunhan Guo, Xinyu Zhan, Lixin Yang, Weiming Wang, Cewu Lu, Hao-Shu Fang (*Equal contribution)",
-      "venue": "Preprint",
-      "image": "images/airexo2.gif",
-      "gif": "images/airexo2.gif",
-      "links": {
-        "arxiv": "https://arxiv.org/abs/2503.03081",
-        "project": "https://airexo.tech/airexo2/"
       },
       "bibtex": "none"
     },
