@@ -1,6 +1,33 @@
 {
   "publications": [
     {
+      "id": "armada",
+      "title": "ARMADA: Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation",
+      "authors": "Wenye Yu, Jun Lv, Zixi Ying, Yang Jin, Chuan Wen†, Cewu Lu† (†Equal advising)",
+      "venue": "Preprint",
+      "image": "images/armada.gif",
+      "gif": "images/armada.gif",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2510.02298",
+        "project": "https://virlus.github.io/armada/",
+        "code": "https://github.com/Virlus/armada"
+      },
+      "bibtex": "none"
+    },
+    {
+      "id": "soe",
+      "title": "SOE: Sample-Efficient Robot Policy Self-Improvement via On-Manifold Exploration",
+      "authors": "Yang Jin, Jun Lv, Han Xue, Wendi Chen, Chuan Wen†, Cewu Lu† (†Equal advising)",
+      "venue": "Preprint",
+      "image": "images/soe.gif",
+      "gif": "images/soe.gif",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2509.19292",
+        "project": "https://ericjin2002.github.io/SOE/"
+      },
+      "bibtex": "none"
+    },
+    {
       "id": "airexo2",
       "title": "AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons",
       "authors": "Hongjie Fang*, Chenxi Wang*, Yiming Wang*, Jingjing Chen*, Shangning Xia, Jun Lv, Zihao He, Xiyan Yi, Yunhan Guo, Xinyu Zhan, Lixin Yang, Weiming Wang, Cewu Lu, Hao-Shu Fang (*Equal contribution)",

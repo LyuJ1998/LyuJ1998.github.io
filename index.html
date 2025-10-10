@@ -96,6 +96,9 @@ copyedNotice();
       const journalHTML = pub.journal ? 
         `<em>${pub.journal}</em><br />` : '';
       
+      // Bold "Jun Lv" in authors list
+      const authorsHTML = pub.authors.replace(/Jun Lv/g, '<strong>Jun Lv</strong>');
+      
       return `
         <table align="center" border="0" cellpadding="20" cellspacing="0" width="100%">
           <tbody>
@@ -110,7 +113,7 @@ copyedNotice();
               </td>
               <td valign="top" width="75%">
                 <papertitle>${pub.title}</papertitle><br/>
-                <authors>${pub.authors}</authors><br />
+                <authors>${authorsHTML}</authors><br />
                 <em>${pub.venue}</em><br /> 
                 ${awardsHTML}
                 ${presentationHTML}
