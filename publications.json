@@ -28,6 +28,20 @@
       "bibtex": "none"
     },
     {
+      "id": "itaco",
+      "title": "iTACO: Interactable Digital Twins of Articulated Objects from Casually Captured RGBD Videos",
+      "authors": "Weikun Peng, Jun Lv, Cewu Lu, Manolis Savva",
+      "venue": "3DV 2026",
+      "image": "images/itaco.gif",
+      "gif": "images/itaco.gif",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2506.08334",
+        "project": "https://3dlg-hcvc.github.io/video2articulation/",
+        "code": "https://github.com/3dlg-hcvc/video2articulation"
+      },
+      "bibtex": "none"
+    },
+    {
       "id": "airexo2",
       "title": "AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons",
       "authors": "Hongjie Fang*, Chenxi Wang*, Yiming Wang*, Jingjing Chen*, Shangning Xia, Jun Lv, Zihao He, Xiyan Yi, Yunhan Guo, Xinyu Zhan, Lixin Yang, Weiming Wang, Cewu Lu, Hao-Shu Fang (*Equal contribution)",
