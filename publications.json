@@ -1,6 +1,19 @@
 {
   "publications": [
     {
+      "id": "irdp",
+      "title": "ImplicitRDP: An End-to-End Visual-Force Diffusion Policy with Structural Slow-Fast Learning",
+      "authors": "Wendi Chen, Han Xue, Yi Wang, Fangyuan Zhou, Jun Lv, Yang Jin, Shirun Tang, Chuan Wen†, Cewu Lu† (†Equal advising)",
+      "venue": "Preprint",
+      "image": "images/irdp.png",
+      "gif": "images/irdp.gif",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2512.10946",
+        "project": "https://implicit-rdp.github.io"
+      },
+      "bibtex": "none"
+    },
+    {
       "id": "armada",
       "title": "ARMADA: Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation",
       "authors": "Wenye Yu, Jun Lv, Zixi Ying, Yang Jin, Chuan Wen†, Cewu Lu† (†Equal advising)",
