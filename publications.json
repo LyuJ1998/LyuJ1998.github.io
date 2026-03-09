@@ -1,6 +1,19 @@
 {
   "publications": [
     {
+      "id": "robopocket",
+      "title": "RoboPocket: Improve Robot Policies Instantly with Your Phone",
+      "authors": "Junjie Fang*, Wendi Chen*, Han Xue*, Fangyuan Zhou*, Tian Le, Yi Wang, Yuting Zhang, Jun Lv, Chuan Wen†, Cewu Lu† (*Equal contribution, †Equal advising)",
+      "venue": "Preprint",
+      "image": "images/robopocket.gif",
+      "gif": "images/robopocket.gif",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2603.05504",
+        "project": "https://robo-pocket.github.io"
+      },
+      "bibtex": "none"
+    },
+    {
       "id": "irdp",
       "title": "ImplicitRDP: An End-to-End Visual-Force Diffusion Policy with Structural Slow-Fast Learning",
       "authors": "Wendi Chen, Han Xue, Yi Wang, Fangyuan Zhou, Jun Lv, Yang Jin, Shirun Tang, Chuan Wen†, Cewu Lu† (†Equal advising)",
